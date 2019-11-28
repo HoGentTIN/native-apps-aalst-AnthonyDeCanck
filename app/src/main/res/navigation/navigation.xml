@@ -6,8 +6,17 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.androidproject.MainFragment"
+        android:name="com.example.androidproject.Main.MainFragment"
         android:label="MainFragment"
-
         tools:layout="@layout/main_fragment"/>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.androidproject.Login.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" />
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.androidproject.Favorites.FavoritesFragment"
+        android:label="favorites_fragment"
+        tools:layout="@layout/favorites_fragment" />
 </navigation>

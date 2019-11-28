@@ -1,4 +1,4 @@
-package com.example.androidproject
+package com.example.androidproject.Favorites
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -6,26 +6,27 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.androidproject.R
 
 
-class ReadTextFragment : Fragment() {
+class FavoritesFragment : Fragment() {
 
     companion object {
-        fun newInstance() = ReadTextFragment()
+        fun newInstance() = FavoritesFragment()
     }
 
-    private lateinit var viewModel: ReadTextViewModel
+    private lateinit var viewModel: FavoritesViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.read_text_fragment, container, false)
+        return inflater.inflate(R.layout.favorites_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(ReadTextViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(FavoritesViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
