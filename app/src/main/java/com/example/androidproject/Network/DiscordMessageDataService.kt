@@ -10,6 +10,12 @@ class DiscordMessageDataService : DiscordMessageAPI {
 
     private val BASE_URL = "http://localhost:50451/api/discord/callback"
 
+    private val OAUTH_REQUEST = "https://discordapp.com/api/oauth2/" +
+            "authorize?client_id=649577462245883904" +
+            "&redirect_uri=http%3A%2F%2Flocalhost%3A50451%2Fapi%2Fdiscord%2Fcallback" +
+            "&response_type=code" +
+            "&scope=identify%20guilds"
+
     private val retrofit = Retrofit.Builder()
         .addConverterFactory(ScalarsConverterFactory.create())
         .baseUrl(BASE_URL)
