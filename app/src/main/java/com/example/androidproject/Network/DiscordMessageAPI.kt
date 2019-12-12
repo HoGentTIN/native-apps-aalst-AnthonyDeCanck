@@ -1,4 +1,4 @@
-package com.example.androidproject.domain
+package com.example.androidproject.Network
 
 interface DiscordMessageAPI {
 

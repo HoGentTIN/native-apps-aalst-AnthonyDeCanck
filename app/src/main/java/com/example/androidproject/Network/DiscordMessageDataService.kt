@@ -1,4 +1,4 @@
-package com.example.androidproject.domain
+package com.example.androidproject.Network
 
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
