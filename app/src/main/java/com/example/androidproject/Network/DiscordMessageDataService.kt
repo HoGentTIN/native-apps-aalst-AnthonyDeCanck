@@ -1,9 +1,11 @@
 package com.example.androidproject.Network
 
+import android.content.Intent
+import android.net.Uri
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
-class DiscordMessageDataService : DiscordMessageAPI {
+class DiscordMessageDataService : DiscordMessageAPI,AuthorizationConnections {
 
     private val CLIENT_ID = "649577462245883904"
     private val CLIENT_SECRET = "rj4tCOT8ThCb7nImpTRlycsxFKIpoT1L"
@@ -16,25 +18,31 @@ class DiscordMessageDataService : DiscordMessageAPI {
             "&response_type=code" +
             "&scope=identify%20guilds"
 
+    private val retrofitOAUTH = Retrofit.Builder()
+        .addConverterFactory(ScalarsConverterFactory.create())
+        .baseUrl(OAUTH_REQUEST)
+        .build()
+
     private val retrofit = Retrofit.Builder()
         .addConverterFactory(ScalarsConverterFactory.create())
         .baseUrl(BASE_URL)
         .build()
 
-    override fun getServersFromUser(userid: Int) {
-        TODO("not implemented") // To change body of created functions use File | Settings | File Templates.
+    override fun getCurrentUserServers() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun getChannelsFromServer(channelid: Int) {
-        TODO("not implemented") // To change body of created functions use File | Settings | File Templates.
+    override fun getChannelsFromServer(serverid: Int) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun postMessageToChannel() {
-        TODO("not implemented") // To change body of created functions use File | Settings | File Templates.
+    override fun postMessageToChannel(channelid: Int) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun getOath2() {
-        TODO("not implemented") // To change body of created functions use File | Settings | File Templates.
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(OAUTH_REQUEST) )
+        //TODO("not implemented") // To change body of created functions use File | Settings | File Templates.
     }
 
     override fun authorizeUser() {
